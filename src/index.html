@@ -11,10 +11,12 @@
 </head>
 
 <body>
-    <nav class="w-full h-20 bg-white shadow-lg mb-4 flex items-center justify-between lg:justify-center px-4">
+
+    <nav class="w-full h-20 bg-white shadow-lg mb-4 flex items-center justify-between lg:justify-center px-4 relative">
         <h1 class="text-2xl font-extrabold">LEGALZOOM</h1>
 
-        <ul class="hidden lg:flex gap-5 ms-8">
+        <ul id="navList"
+            class="hidden lg:flex gap-5 ms-8 flex-col lg:flex-row absolute lg:static top-20  right-0 w-full lg:w-auto bg-white lg:bg-transparent shadow-lg lg:shadow-none px-4 lg:px-0 py-4 lg:py-0">
             <li class="flex items-center gap-1 font-semibold hover:text-gray-500 cursor-pointer">Business
                 <i class="fa-solid fa-chevron-down text-sm"></i>
             </li>
@@ -44,10 +46,20 @@
             </div>
         </div>
 
-        <div class="flex lg:hidden text-2xl cursor-pointer">
+        <div id="menuBtn" class="flex lg:hidden text-2xl cursor-pointer">
             <i class="fa-solid fa-bars"></i>
         </div>
     </nav>
+
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const navList = document.getElementById('navList');
+
+        menuBtn.addEventListener('click', () => {
+            navList.classList.toggle('hidden');
+            navList.classList.toggle('flex');
+        });
+    </script>
 
     <div class="w-full h-fit bg-white py-3 md:py-5 md:px-6">
         <div class="flex flex-col md:flex-row items-center justify-center gap-8 lg:gap-10">
